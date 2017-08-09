@@ -12,11 +12,11 @@ const defaultState = {};
 const sagaMiddleware = createSagaMiddleware();
 
 const configureStore = createStore(
-    rootReducers,
-    defaultState,
-    composeWithDevTools(
-        applyMiddleware(thunk, sagaMiddleware, loggerMiddleware)
-    ),
+	rootReducers,
+	defaultState,
+	composeWithDevTools(
+		applyMiddleware(thunk, sagaMiddleware, loggerMiddleware)
+	),
 );
 
 sagaMiddleware.run(rootSaga);

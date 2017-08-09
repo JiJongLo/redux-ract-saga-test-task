@@ -1,7 +1,7 @@
 export const initialState = {
-    listUsers: [],
-    currentUser: {
-        color: '',
-        name: ''
-    }
+   listUsers: [],
+   currentUser: {
+       color: '',
+	   name: ''
+   }
 };

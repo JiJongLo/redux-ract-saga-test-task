@@ -1,9 +1,6 @@
-import { takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import * as types from '../constants/actionTypes';
-import { put, call } from 'redux-saga/effects';
-import {
-    updateUserList, getAllUsers
-} from '../api/api';
+import { getAllUsers, updateUserList } from '../api/api';
 
 import {
     failedUpdateRequest,

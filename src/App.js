@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './components/Header';
@@ -10,20 +10,17 @@ const muiTheme = getMuiTheme({
     },
 });
 
-class App extends React.Component {
+class App extends Component {
     render() {
         const { children } = this.props;
         return (
-            < MuiThemeProvider
-        muiTheme = { muiTheme } >
-            < div
-        className = "app" >
-            < Header / >
-            { children }
-            < / div >
-            < / MuiThemeProvider >
-    )
-        ;
+            <MuiThemeProvider muiTheme={muiTheme}>
+                <div className="app">
+                    <Header/>
+                    {children}
+                </div>
+            </MuiThemeProvider>
+        );
     }
 }
 

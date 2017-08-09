@@ -8,7 +8,7 @@ import {
 // Combines all reducers to a single reducer function
 const rootReducer = combineReducers({
     user,
-    routing: routerReducer
+	routing: routerReducer
 });
 
 export default rootReducer;

@@ -7,13 +7,12 @@ export function updateUserList(user) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
-    }).then(resp = > resp.json()
-)
+    }).then(resp => resp.json())
 };
 
+
 export function getAllUsers() {
-    return fetch(`${url}/users`).then(resp = > resp.json()
-)
+    return fetch(`${url}/users`).then(resp => resp.json())
 };
 
 

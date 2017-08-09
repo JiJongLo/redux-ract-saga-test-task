@@ -10,27 +10,17 @@ const style = {
     marginTop: '50px',
     padding: '10px'
 };
-
 class FormContainer extends Component {
-    componentDidMount() {
+    componentDidMount(){
         this.props.getUsers();
     }
-
     render() {
         return (
-            < div
-        className = "container"
-        style = { style } >
-            < UserForm
-        onAddUser = { this.props.addUser
-    }/>
-    <
-        UsersList
-        users = { this.props.listUsers
-    }/>
-    </
-        div >
-    )
+            <div className="container" style={style}>
+                <UserForm onAddUser={this.props.addUser}/>
+                <UsersList users={this.props.listUsers}/>
+            </div>
+        )
     };
 };
 
@@ -41,20 +31,16 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return ({
-        addUser: (user) = > dispatch(requestUserAdding(user)),
-        getUsers
-:
-    () =
->
-    dispatch(getUsers())
-})
+    return({
+        addUser: (user) => dispatch(requestUserAdding(user)),
+        getUsers: () => dispatch(getUsers())
+    })
 };
 
 FormContainer.propTypes = {
-    getUsers: PropTypes.func.isRequired,
-    addUser: PropTypes.func.isRequired,
+    getUsers : PropTypes.func.isRequired,
+    addUser : PropTypes.func.isRequired,
     listUsers: PropTypes.array.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormContainer);
+export default connect(mapStateToProps, mapDispatchToProps) (FormContainer);
